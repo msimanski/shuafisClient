@@ -1,21 +1,62 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-sidenav-container fullscreen>
 
-<router-outlet></router-outlet>
+	<mat-sidenav #exampleSidenav class="example-sidenav mat-elevation-z3" [mode]="isMobile ? 'over' : 'side'">
+
+    <mat-toolbar>
+      Control Panel
+      <span fxFlex></span>
+      <button mat-icon-button (click)="exampleSidenav.close()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    </mat-toolbar>
+
+		<mat-nav-list style="z-index: 2">
+			<a mat-list-item routerLink="/home" routerLinkActive="active-link" (click)="exampleSidenav.close()">Home</a>
+			<a mat-list-item routerLink="/about" routerLinkActive="active-link" (click)="exampleSidenav.close()">About</a>
+			<!-- <a mat-list-item (click)="toggleGuides()">
+			<p matLine>Guides</p>
+				<mat-icon [class.isToggled]="hideGuides" class="toggle-component-icon" [class.isUnToggled]="!hideGuides">keyboard_arrow_down</mat-icon>
+			</a> -->
+    </mat-nav-list>
+    
+  </mat-sidenav>
+  
+	<mat-toolbar color="primary" class="mat-elevation-z3">
+    <button mat-icon-button (click)="exampleSidenav.toggle()"><mat-icon>menu</mat-icon></button> 
+    
+    <img src="https://www.setonhill.edu/favicon/favicon-32x32.png" alt="">
+      SHUAFIS
+		<span fxFlex></span>
+  </mat-toolbar>
+  
+	<div class="app-content">
+
+    <mat-card>
+      <mat-card-title>About Material Docs Examples</mat-card-title>
+      <mat-card-content>
+        <p>This was made using
+          <a href="https://stackblitz.com">Stackblitz</a> which is a way to be able to run Angular on and features like viewing the source code of this page etc.</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <a mat-button target="_blank" href="https://stackblitz.com/edit/material2-docs-all-examples" color="primary">View source code</a>
+        <a mat-button target="_blank" href="https://stackblitz.com" color="accent">
+          <mat-icon>
+            
+          </mat-icon>
+          Stackblitz</a>
+      </mat-card-actions>
+    </mat-card>
+    <br>
+    <mat-card>
+      <mat-card-title>Versions</mat-card-title>
+      <mat-card-content>
+        
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <a mat-button color="primary" href="https://angular.io" target="_blank">Angular Docs</a>
+        <a mat-button color="primary" href="https://material.angular.io" target="_blank">Angular Material Docs</a>
+      </mat-card-actions>
+    </mat-card>
+
+		<router-outlet></router-outlet>
+  </div>
+  
+</mat-sidenav-container>

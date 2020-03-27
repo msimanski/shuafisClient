@@ -1,0 +1,28 @@
+<mat-card>
+	<mat-card-title>About Material Docs Examples</mat-card-title>
+	<mat-card-content>
+		<p>This was made using
+			<a href="https://stackblitz.com">Stackblitz</a> which is a way to be able to run Angular on and features like viewing the source code of this page etc.</p>
+	</mat-card-content>
+	<mat-card-actions align="end">
+		<a mat-button target="_blank" href="https://stackblitz.com/edit/material2-docs-all-examples" color="primary">View source code</a>
+		<a mat-button target="_blank" href="https://stackblitz.com" color="accent">
+			<mat-icon>
+				<svg width="24" height="24">
+					<path d="M17.3,9h-4.5l4.2-6.6h-5.3l-4.9,9.9h3.9l-3.9,9.2L17.3,9z" />
+				</svg>
+			</mat-icon>
+			Stackblitz</a>
+	</mat-card-actions>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-title>Versions</mat-card-title>
+  <mat-card-content>
+    <p [innerText]="getVersions()">Loading versions...</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <a mat-button color="primary" href="https://angular.io" target="_blank">Angular Docs</a>
+    <a mat-button color="primary" href="https://material.angular.io" target="_blank">Angular Material Docs</a>
+  </mat-card-actions>
+</mat-card>
