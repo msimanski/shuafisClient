@@ -1,5 +1,5 @@
 import { Component, VERSION as angularVer} from '@angular/core';
-import { VERSION as materialVer } from '@angular/material';
+import { VERSION as materialVer } from '@angular/material/core';
 
 @Component({
   selector: 'app-home-dashboard',
