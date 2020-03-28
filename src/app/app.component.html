@@ -32,25 +32,75 @@
     <mat-card>
       <mat-card-title>Dashboard</mat-card-title>
       <mat-card-content>
-        <p>This was made using
-          <a href="https://stackblitz.com">Stackblitz</a> which is a way to be able to run Angular on and features like viewing the source code of this page etc.</p>
+        
+        <div gdGap style="padding: 20px;">
+          <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+          
+            <mat-card class="child-1" style="padding-bottom: 30px;">
+              <h4>Total Indexed Profiles:</h4>
+              <br>
+              <p style="font-size: 48pt;">12345</p>
+            </mat-card>
+  
+            <mat-card class="child-2" style="padding-bottom: 30px;">
+              <h4>Total Queries:</h4>
+              <br>
+              <p style="font-size: 48pt;">12345</p>
+            </mat-card>
+  
+            <mat-card class="child-3" style="padding-bottom: 30px;">
+              <h4>Total Ident Queries:</h4>
+              <br>
+              <p style="font-size: 48pt;">12345</p>
+            </mat-card>
+
+            <mat-card class="child-4" style="padding-bottom: 30px;">
+              <h4>Total Indexed Cases:</h4>
+              <br>
+              <p style="font-size: 48pt;">12345</p>
+            </mat-card>
+  
+            <mat-card class="child-5" style="padding-bottom: 30px;">
+              <h4>Queries Today:</h4>
+              <br>
+              <p style="font-size: 48pt;">12345</p>
+            </mat-card>
+  
+            <mat-card class="child-6" style="padding-bottom: 30px;">
+              <h4>Ident Queries Today:</h4>
+              <br>
+              <p style="font-size: 48pt;">12345</p>
+            </mat-card>
+  
+          </div>
+  
+          
+        </div>
+
       </mat-card-content>
+
     </mat-card>
 
     <br>
 
     <mat-card>
-      <mat-card-title>Versions</mat-card-title>
+      <mat-card-title>Welcome</mat-card-title>
       <mat-card-content>
-        
+
+        <div class="flex-container" fxLayout="row" fxLayoutAlign="left">
+          <img width="300px" height="300px" src="https://www.setonhill.edu/favicon/apple-touch-icon-180x180.png">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum modi quos maiores fuga autem ut, quam accusamus qui necessitatibus aliquid suscipit labore ea rerum animi tempore architecto repudiandae. Esse, sunt?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur culpa maxime pariatur nostrum? Iusto maiores numquam minima aliquid dolorum quibusdam sit nobis ex magni repudiandae, in perspiciatis possimus omnis aut?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit voluptates cumque, consectetur pariatur nostrum adipisci nesciunt vero, aspernatur quos sit sed nobis. Error earum facere veniam et accusantium eaque praesentium.
+          </p>
+        </div>
+
       </mat-card-content>
-      <mat-card-actions align="end">
-        <a mat-button color="primary" href="https://angular.io" target="_blank">Angular Docs</a>
-        <a mat-button color="primary" href="https://material.angular.io" target="_blank">Angular Material Docs</a>
-      </mat-card-actions>
     </mat-card>
 
-		<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+    
   </div>
   
 </mat-sidenav-container>
