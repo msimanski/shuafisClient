@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +33,7 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
