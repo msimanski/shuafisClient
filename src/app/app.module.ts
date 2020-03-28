@@ -23,11 +23,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { from } from 'rxjs';
+import { UploadProfileComponent } from './upload-profile/upload-profile.component';
+import { QueryComparisonComponent } from './query-comparison/query-comparison.component';
+import { QueryUnknownComponent } from './query-unknown/query-unknown.component';
+import { UploadCaseComponent } from './upload-case/upload-case.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeDashboardComponent
+    HomeDashboardComponent,
+    UploadProfileComponent,
+    QueryComparisonComponent,
+    QueryUnknownComponent,
+    UploadCaseComponent
   ],
   imports: [
     BrowserModule,
