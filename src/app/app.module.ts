@@ -18,6 +18,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -39,6 +41,7 @@ import { UploadCaseComponent } from './upload-case/upload-case.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FlexLayoutModule,
     MatSidenavModule,
     MatListModule,
