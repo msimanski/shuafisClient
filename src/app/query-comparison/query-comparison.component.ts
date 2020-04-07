@@ -13,6 +13,8 @@ export class QueryComparisonComponent implements OnInit {
 
   file1FileList: FileList;
   file2FileList: FileList;
+  file1URL: any;
+  file2URL: any;
   fileTempLocation: any;
   currentFile1: File;
   currentFile2: File;
@@ -30,11 +32,21 @@ export class QueryComparisonComponent implements OnInit {
   selectFile1(event) {
     this.file1FileList = event.target.files;
     this.currentFile1 = this.file1FileList.item(0);
+    var reader = new FileReader();
+    reader.readAsDataURL(this.currentFile1); 
+    reader.onload = (_event) => { 
+      this.file1URL = reader.result; 
+    }
   }
 
   selectFile2(event) {
     this.file2FileList = event.target.files;
     this.currentFile2 = this.file2FileList.item(0);
+    var reader = new FileReader();
+    reader.readAsDataURL(this.currentFile2); 
+    reader.onload = (_event) => { 
+      this.file2URL = reader.result; 
+    }
   }
 
   upload() {
