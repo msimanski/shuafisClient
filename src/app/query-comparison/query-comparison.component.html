@@ -50,15 +50,15 @@
 
   <br>
 
-  <mat-card *ngIf="message">
+  <mat-card *ngIf="response">
     <mat-card-title>Results</mat-card-title>
     <mat-card-content>
-      <h1 style="color: red;" *ngIf="result.ident"> Comparison is within ident threshold.</h1>
-      <h1 style="color: green;" *ngIf="!result.ident"> Comparison is NOT within ident threshold.</h1>
+      <h1 style="color: red;" *ngIf="thing"> Comparison is within ident threshold.</h1>
+      <h1 style="color: green;" *ngIf="!thing"> Comparison is NOT within ident threshold.</h1>
       <br>
-      <p>The comparison analysis scored: {{result.score}}</p>
+      <p>The comparison analysis scored: {{responseJSONObj.score}}</p>
       <br>
-      <p>The comparison took {{result.time}}ms to complete.</p>
+      <p>The comparison took {{responseJSONObj.time}}ms to complete.</p>
     </mat-card-content>
   </mat-card>
 

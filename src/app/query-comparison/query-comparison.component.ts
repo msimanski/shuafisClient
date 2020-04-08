@@ -9,6 +9,7 @@ import { CompareNToNService } from '../service/compare-nto-n.service';
   templateUrl: './query-comparison.component.html',
   styleUrls: ['./query-comparison.component.css']
 })
+
 export class QueryComparisonComponent implements OnInit {
 
   file1FileList: FileList;
@@ -19,14 +20,12 @@ export class QueryComparisonComponent implements OnInit {
   currentFile1: File;
   currentFile2: File;
   progress = 0;
-  message = '';
+  message: any;
+  response = false;
 
-  result = 
-  {
-    ident: null,
-    score: null,
-    time: null
-  };
+  thing: boolean;
+
+  responseJSONObj: result;
 
   fileInfos: Observable<any>;
 
@@ -66,7 +65,9 @@ export class QueryComparisonComponent implements OnInit {
           this.message = event.body.message;
           this.fileInfos = this.uploadService.getFiles();
 
-          this.result = JSON.parse(this.message);
+          this.responseJSONObj = <result>event.body;
+          this.thing = getBoolean(this.responseJSONObj.ident);
+          this.response = true;
         }
       },
       err => {
@@ -79,4 +80,25 @@ export class QueryComparisonComponent implements OnInit {
     
   }  
 
+}
+
+function getBoolean(value){
+  switch(value){
+       case true:
+       case "true":
+       case 1:
+       case "1":
+       case "on":
+       case "yes":
+           return true;
+       default: 
+           return false;
+   }
+}
+
+export interface result
+{
+  ident: boolean;
+  score: number;
+  time: number;
 }
