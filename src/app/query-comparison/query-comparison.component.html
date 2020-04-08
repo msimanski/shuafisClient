@@ -38,8 +38,6 @@
         </div>
       </div>
 
-      <div>{{ message }}</div>
-
     </mat-card-content>
 
     <mat-card-actions>
@@ -51,5 +49,17 @@
   </mat-card>
 
   <br>
+
+  <mat-card *ngIf="message">
+    <mat-card-title>Results</mat-card-title>
+    <mat-card-content>
+      <h1 style="color: red;" *ngIf="result.ident"> Comparison is within ident threshold.</h1>
+      <h1 style="color: green;" *ngIf="!result.ident"> Comparison is NOT within ident threshold.</h1>
+      <br>
+      <p>The comparison analysis scored: {{result.score}}</p>
+      <br>
+      <p>The comparison took {{result.time}}ms to complete.</p>
+    </mat-card-content>
+  </mat-card>
 
 </div>

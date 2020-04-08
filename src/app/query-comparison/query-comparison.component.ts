@@ -21,6 +21,13 @@ export class QueryComparisonComponent implements OnInit {
   progress = 0;
   message = '';
 
+  result = 
+  {
+    ident: null,
+    score: null,
+    time: null
+  };
+
   fileInfos: Observable<any>;
 
   constructor(private uploadService: CompareNToNService) { }
@@ -55,10 +62,11 @@ export class QueryComparisonComponent implements OnInit {
     this.uploadService.upload(this.currentFile1, this.currentFile2).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {
-          this.progress = Math.round(100 * event.loaded / event.total);
         } else if (event instanceof HttpResponse) {
           this.message = event.body.message;
           this.fileInfos = this.uploadService.getFiles();
+
+          this.result = JSON.parse(this.message);
         }
       },
       err => {
