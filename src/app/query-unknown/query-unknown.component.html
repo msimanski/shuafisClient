@@ -1,1 +1,60 @@
-<p>query-unknown works!</p>
+<div class="app-content">
+
+    <mat-card>
+      <mat-card-title>Unknown Query</mat-card-title>
+      <mat-card-content>
+        
+        <br>
+  
+        <div gdGap style="padding: 20px;">
+          <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+            <mat-card>
+              <mat-card-title>Unknown Print Image File</mat-card-title>
+              <mat-card-content>
+                <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                  <img [src]="file1URL" *ngIf="file1URL">
+                </div>
+                <input hidden (change)="selectFile1($event)" #file1Input type="file" id="file1">
+                <div *ngIf="file1URL" id="file1Name">{{currentFile1.name}}</div>
+              </mat-card-content>
+              <mat-card-actions>
+                <button type="button" mat-raised-button (click)="file1Input.click()">Choose File</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+  
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button class="btn btn-success" [disabled]="!file1FileList" (click)="upload()">
+          Upload
+        </button>
+      </mat-card-actions>
+  
+    </mat-card>
+  
+    <br>
+  
+    <mat-card *ngIf="response">
+      <mat-card-title>Results</mat-card-title>
+      <mat-card-content>
+        <h1 style="color: red;" *ngIf="thing"> Profile found within ident threshold.</h1>
+        <h1 style="color: green;" *ngIf="!thing"> No profile found within ident threshold.</h1>
+        <br>
+        <div *ngIf="thing">
+            <p>PID: {{responseJSONObj.id}}</p>
+            <p>Name: {{responseJSONObj.name}}</p>
+            <p>Address: {{responseJSONObj.address}}</p>
+            <p>City: {{responseJSONObj.city}}</p>
+            <p>State: {{responseJSONObj.state}}</p>
+            <p>ZIP: {{responseJSONObj.zip}}</p>
+            <p>Phone: {{responseJSONObj.phone}}</p>
+            <p>SSID: {{responseJSONObj.ssid}}</p>
+        </div>
+        <br>
+        <p>The query took {{responseJSONObj.time}}ms to complete.</p>
+      </mat-card-content>
+    </mat-card>
+  
+  </div>
