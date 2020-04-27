@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CompareNToNService 
+export class CompareOneToOneService 
 {
 
   private baseUrl = 'http://localhost:2907';
@@ -19,7 +19,7 @@ export class CompareNToNService
     formData.append('file1', file1);
     formData.append('file2', file2);
 
-    const req = new HttpRequest('POST', `${this.baseUrl}/comparenton`, formData, 
+    const req = new HttpRequest('POST', `${this.baseUrl}/compareonetoone`, formData, 
     {
       reportProgress: true,
       responseType: 'json'

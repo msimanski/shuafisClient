@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UploadFileService } from 'src/app/service/upload-file-service.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CompareNToNService } from '../service/compare-nto-n.service';
+import { CompareOneToOneService } from '../service/compare-one-to-one.service';
 
 @Component({
   selector: 'app-query-comparison',
@@ -29,7 +29,7 @@ export class QueryComparisonComponent implements OnInit {
 
   fileInfos: Observable<any>;
 
-  constructor(private uploadService: CompareNToNService) { }
+  constructor(private uploadService: CompareOneToOneService) { }
 
   ngOnInit() {
     this.fileInfos = this.uploadService.getFiles();

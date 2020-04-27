@@ -1,35 +1,240 @@
-<div *ngIf="currentFile" class="progress">
-    <div
-      class="progress-bar progress-bar-info progress-bar-striped"
-      role="progressbar"
-      attr.aria-valuenow="{{ progress }}"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      [ngStyle]="{ width: progress + '%' }"
-    >
-      {{ progress }}%
-    </div>
-  </div>
+<div class="app-content">
+
+  <mat-card>
+    <mat-card-title style="margin-bottom: 15px;">Upload Profile</mat-card-title>
+    <mat-card-content>
+
+      <mat-card>
+        <mat-card-title>Prints</mat-card-title>
+        <mat-card-content>
+          
+          <br>
+    
+          <div gdGap style="padding: 20px;">
+            <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+              
+              <mat-card>
+                <mat-card-title>Left Little Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="leftLittleURL" *ngIf="leftLittleURL">
+                  </div>
+                  <input hidden (change)="selectLeftLittleFile($event)" #leftLittleInput type="file" id="leftLittleInput">
+                  <div *ngIf="leftLittleURL" id="leftLittleName">{{leftLittleCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="leftLittleInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+        
+              <mat-card>
+                <mat-card-title>Left Ring Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="leftRingURL" *ngIf="leftRingURL">
+                  </div>
+                  <input hidden (change)="selectLeftRingFile($event)" #leftRingInput type="file" id="leftLittleInput">
+                  <div *ngIf="leftRingURL" id="leftRingName">{{leftRingCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="leftRingInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+              <mat-card>
+                <mat-card-title>Left Middle Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="leftMiddleURL" *ngIf="leftMiddleURL">
+                  </div>
+                  <input hidden (change)="selectLeftMiddleFile($event)" #leftMiddleInput type="file" id="leftLittleInput">
+                  <div *ngIf="leftMiddleURL" id="leftMiddleName">{{leftMiddleCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="leftMiddleInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+              <mat-card>
+                <mat-card-title>Left Index Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="leftIndexURL" *ngIf="leftIndexURL">
+                  </div>
+                  <input hidden (change)="selectLeftIndexFile($event)" #leftIndexInput type="file" id="leftIndexInput">
+                  <div *ngIf="leftIndexURL" id="leftIndexName">{{leftIndexCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="leftIndexInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+              <mat-card>
+                <mat-card-title>Left Thumb</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="leftThumbURL" *ngIf="leftThumbURL">
+                  </div>
+                  <input hidden (change)="selectLeftThumbFile($event)" #leftThumbInput type="file" id="leftThumbInput">
+                  <div *ngIf="leftThumbURL" id="leftThumbName">{{leftThumbCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="leftThumbInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+            </div>
+    
+            <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+              
+              <mat-card>
+                <mat-card-title>Right Little Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="rightLittleURL" *ngIf="rightLittleURL">
+                  </div>
+                  <input hidden (change)="selectRightLittleFile($event)" #rightLittleInput type="file" id="rightLittleInput">
+                  <div *ngIf="rightLittleURL" id="rightLittleName">{{rightLittleCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="rightLittleInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+        
+              <mat-card>
+                <mat-card-title>Right Ring Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="rightRingURL" *ngIf="rightRingURL">
+                  </div>
+                  <input hidden (change)="selectRightRingFile($event)" #rightRingInput type="file" id="rightLittleInput">
+                  <div *ngIf="rightRingURL" id="rightRingName">{{rightRingCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="rightRingInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+              <mat-card>
+                <mat-card-title>Right Middle Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="rightMiddleURL" *ngIf="rightMiddleURL">
+                  </div>
+                  <input hidden (change)="selectRightMiddleFile($event)" #rightMiddleInput type="file" id="rightLittleInput">
+                  <div *ngIf="rightMiddleURL" id="rightMiddleName">{{rightMiddleCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="rightMiddleInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+              <mat-card>
+                <mat-card-title>Right Index Finger</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="rightIndexURL" *ngIf="rightIndexURL">
+                  </div>
+                  <input hidden (change)="selectRightIndexFile($event)" #rightIndexInput type="file" id="rightIndexInput">
+                  <div *ngIf="rightIndexURL" id="rightIndexName">{{rightIndexCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="rightIndexInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+              <mat-card>
+                <mat-card-title>Right Thumb</mat-card-title>
+                <mat-card-content>
+                  <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <img [src]="rightThumbURL" *ngIf="rightThumbURL">
+                  </div>
+                  <input hidden (change)="selectRightThumbFile($event)" #rightThumbInput type="file" id="rightThumbInput">
+                  <div *ngIf="rightThumbURL" id="rightThumbName">{{rightThumbCurrentFile.name}}</div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button type="button" mat-raised-button (click)="rightThumbInput.click()">Choose File</button>
+                </mat-card-actions>
+              </mat-card>
+    
+            </div>
+    
+          </div>
+    
+        </mat-card-content>
+      </mat-card>
+
+      <br>
+
+      <mat-card>
+        <mat-card-title>Identifying Demographics</mat-card-title>
+        <mat-card-content>
+          
+          <br>
+
+            <div class="form-container" fxLayout.xs="column" fxLayout.s="column">
+
+              <form [formGroup]="formData" (ngSubmit) = "upload(formData.value)">
+                <mat-form-field appearance="outline">
+                  <input name="nameInput" formControlName="name" matInput placeholder="ex: &quot;John Edgar Hoover&quot;">
+                  <mat-hint>Name</mat-hint>
+                </mat-form-field>
+    
+                <mat-form-field>
+                  <mat-label>Date of Birth</mat-label>
+                  <input name="dobInput" formControlName="dob" matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                  <input name="ssidInput" formControlName="ssid" matInput placeholder="ex: &quot;### ## ####&quot;">
+                  <mat-hint>Social Security Number</mat-hint>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                  <input name="phoneInput" formControlName="phone" matInput placeholder="ex: &quot;(202) 324-3000&quot;">
+                  <mat-hint>Phone Number</mat-hint>
+                  <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <input name="addressInput" formControlName="address" matInput placeholder="ex: &quot;935 Pennsylvania Ave NW&quot;">
+                  <mat-hint>Street Address</mat-hint>
+                </mat-form-field>
   
-  <label class="btn btn-default">
-    <input type="file" (change)="selectFile($event)" />
-  </label>
+                <mat-form-field appearance="outline">
+                  <input name="cityInput" formControlName="city" matInput placeholder="ex: &quot;Washington&quot;">
+                  <mat-hint>City</mat-hint>
+                </mat-form-field>
   
-  <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
-    Upload
-  </button>
+                <mat-form-field appearance="outline">
+                  <input name="stateInput" formControlName="state" matInput placeholder="ex: &quot;District of Columbia&quot;">
+                  <mat-hint>State/Territory</mat-hint>
+                </mat-form-field>
   
-  <div class="alert alert-light" role="alert">{{ message }}</div>
+                <mat-form-field appearance="outline">
+                  <input name="zipInput" formControlName="zip" matInput placeholder="ex: &quot;20535&quot;">
+                  <mat-hint>ZIP Code</mat-hint>
+                </mat-form-field>
+              </form>
+
+          </div>
+
+          <br>
+
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="btn btn-success" (click)="upload(formData.value)">
+        Upload
+      </button>
+    </mat-card-actions>
+  </mat-card>
   
-  <div class="card">
-    <div class="card-header">List of Files</div>
-    <ul
-      class="list-group list-group-flush"
-      *ngFor="let file of fileInfos | async"
-    >
-      <li class="list-group-item">
-        <a href="{{ file.url }}">{{ file.name }}</a>
-      </li>
-    </ul>
-  </div>
-  
+</div>

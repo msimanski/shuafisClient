@@ -17,6 +17,12 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -43,6 +49,10 @@ import { UploadCaseComponent } from './upload-case/upload-case.component';
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
@@ -54,9 +64,12 @@ import { UploadCaseComponent } from './upload-case/upload-case.component';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    FormsModule,
+    ReactiveFormsModule,
+    LayoutModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
