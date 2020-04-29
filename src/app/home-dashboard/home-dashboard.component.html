@@ -4,43 +4,25 @@
       <mat-card-title>Dashboard</mat-card-title>
       <mat-card-content>
         
-        <div gdGap style="padding: 20px;">
+        <div>
           <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
           
-            <mat-card class="child-1" style="padding-bottom: 30px;">
+            <mat-card class="child-1" style="padding-bottom: 30px; text-align: center;">
               <h4>Total Indexed Profiles:</h4>
               <br>
-              <p style="font-size: 48pt;">12345</p>
+              <p style="font-size: 48pt;">{{statisticsData?.indexedprofiles}}</p>
             </mat-card>
   
-            <mat-card class="child-2" style="padding-bottom: 30px;">
+            <mat-card class="child-2" style="padding-bottom: 30px; text-align: center;">
               <h4>Total Queries:</h4>
               <br>
-              <p style="font-size: 48pt;">12345</p>
+              <p style="font-size: 48pt;">{{statisticsData?.totalqueries}}</p>
             </mat-card>
   
-            <mat-card class="child-3" style="padding-bottom: 30px;">
+            <mat-card class="child-3" style="padding-bottom: 30px; text-align: center;">
               <h4>Total Ident Queries:</h4>
               <br>
-              <p style="font-size: 48pt;">12345</p>
-            </mat-card>
-
-            <mat-card class="child-4" style="padding-bottom: 30px;">
-              <h4>Total Indexed Cases:</h4>
-              <br>
-              <p style="font-size: 48pt;">12345</p>
-            </mat-card>
-  
-            <mat-card class="child-5" style="padding-bottom: 30px;">
-              <h4>Queries Today:</h4>
-              <br>
-              <p style="font-size: 48pt;">12345</p>
-            </mat-card>
-  
-            <mat-card class="child-6" style="padding-bottom: 30px;">
-              <h4>Ident Queries Today:</h4>
-              <br>
-              <p style="font-size: 48pt;">12345</p>
+              <p style="font-size: 48pt;">{{statisticsData?.totalidentqueries}}</p>
             </mat-card>
   
           </div>
@@ -51,8 +33,6 @@
       </mat-card-content>
 
     </mat-card>
-
-    <br>
 
     <mat-card>
       <mat-card-title>Welcome</mat-card-title>

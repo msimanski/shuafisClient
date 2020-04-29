@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -47,6 +48,7 @@ import { UploadCaseComponent } from './upload-case/upload-case.component';
   ],
   imports: [
     BrowserModule,
+    MatSnackBarModule,
     HttpClientModule,
     FlexLayoutModule,
     MatFormFieldModule,

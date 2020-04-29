@@ -23,6 +23,8 @@ export class QueryComparisonComponent implements OnInit {
   message: any;
   response = false;
 
+  needHelp: boolean;
+
   thing: boolean;
 
   responseJSONObj: result;
@@ -33,6 +35,7 @@ export class QueryComparisonComponent implements OnInit {
 
   ngOnInit() {
     this.fileInfos = this.uploadService.getFiles();
+    this.needHelp = false;
   }  
 
   selectFile1(event) {
@@ -52,6 +55,18 @@ export class QueryComparisonComponent implements OnInit {
     reader.readAsDataURL(this.currentFile2); 
     reader.onload = (_event) => { 
       this.file2URL = reader.result; 
+    }
+  }
+
+  toggleHelp() 
+  {
+    if (this.needHelp == false) 
+    {
+      this.needHelp = true;
+    }
+    else 
+    {
+      this.needHelp = false;
     }
   }
 

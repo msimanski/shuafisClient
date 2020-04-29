@@ -20,6 +20,8 @@ export class QueryUnknownComponent implements OnInit {
   message: any;
   response = false;
 
+  needHelp: boolean;
+
   thing: boolean;
 
   responseJSONObj: result;
@@ -30,6 +32,7 @@ export class QueryUnknownComponent implements OnInit {
 
   ngOnInit() {
     this.fileInfos = this.uploadService.getFiles();
+    this.needHelp = false;
   }  
 
   selectFile1(event) {
@@ -64,7 +67,19 @@ export class QueryUnknownComponent implements OnInit {
       });
   
     
-  }  
+  } 
+  
+  toggleHelp() 
+  {
+    if (this.needHelp == false) 
+    {
+      this.needHelp = true;
+    }
+    else 
+    {
+      this.needHelp = false;
+    }
+  }
 
 }
 

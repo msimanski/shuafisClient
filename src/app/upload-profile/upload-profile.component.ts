@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UploadProfileService } from '../service/upload-profile.service';
 import { FormArrayName, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-upload-profile',
@@ -58,10 +59,11 @@ export class UploadProfileComponent implements OnInit {
 
   formData: FormGroup;
 
-  message: any;
-  response = false;
+  jsonResponse: JSON;
 
-  thing: boolean;
+  message: any;
+  succeed: boolean;
+  response = false;
 
   responseJSONObj: result;
 
@@ -69,10 +71,14 @@ export class UploadProfileComponent implements OnInit {
 
   pipe = new DatePipe('en-US');
 
-  constructor(private uploadService: UploadProfileService, private formBuilder: FormBuilder) { }
+  needHelp: boolean;
 
-  ngOnInit() {
-    
+  constructor(private uploadService: UploadProfileService, private formBuilder: FormBuilder, private _snackBar: MatSnackBar) { }
+
+  ngOnInit() 
+  {
+    this.needHelp = false;
+
     this.formData = this.formBuilder.group({
       'name': '',
       'address': '',
@@ -97,120 +103,155 @@ export class UploadProfileComponent implements OnInit {
 
   }  
 
-  selectLeftLittleFile(event) {
+  selectLeftLittleFile(event) 
+  {
     this.leftLittleFileList = event.target.files;
     this.leftLittleCurrentFile = this.leftLittleFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.leftLittleCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.leftLittleURL = reader.result; 
     }
   }
 
-  selectLeftRingFile(event) {
+  selectLeftRingFile(event) 
+  {
     this.leftRingFileList = event.target.files;
     this.leftRingCurrentFile = this.leftRingFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.leftRingCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.leftRingURL = reader.result; 
     }
   }
 
-  selectLeftMiddleFile(event) {
+  selectLeftMiddleFile(event) 
+  {
     this.leftMiddleFileList = event.target.files;
     this.leftMiddleCurrentFile = this.leftMiddleFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.leftMiddleCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.leftMiddleURL = reader.result; 
     }
   }
 
-  selectLeftIndexFile(event) {
+  selectLeftIndexFile(event) 
+  {
     this.leftIndexFileList = event.target.files;
     this.leftIndexCurrentFile = this.leftIndexFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.leftIndexCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.leftIndexURL = reader.result; 
     }
   }
 
-  selectLeftThumbFile(event) {
+  selectLeftThumbFile(event) 
+  {
     this.leftThumbFileList = event.target.files;
     this.leftThumbCurrentFile = this.leftThumbFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.leftThumbCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.leftThumbURL = reader.result; 
     }
   }
 
-  selectRightLittleFile(event) {
+  selectRightLittleFile(event) 
+  {
     this.rightLittleFileList = event.target.files;
     this.rightLittleCurrentFile = this.rightLittleFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.rightLittleCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.rightLittleURL = reader.result; 
     }
   }
 
-  selectRightRingFile(event) {
+  selectRightRingFile(event) 
+  {
     this.rightRingFileList = event.target.files;
     this.rightRingCurrentFile = this.rightRingFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.rightRingCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.rightRingURL = reader.result; 
     }
   }
 
-  selectRightMiddleFile(event) {
+  selectRightMiddleFile(event) 
+  {
     this.rightMiddleFileList = event.target.files;
     this.rightMiddleCurrentFile = this.rightMiddleFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.rightMiddleCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.rightMiddleURL = reader.result; 
     }
   }
 
-  selectRightIndexFile(event) {
+  selectRightIndexFile(event) 
+  {
     this.rightIndexFileList = event.target.files;
     this.rightIndexCurrentFile = this.rightIndexFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.rightIndexCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.rightIndexURL = reader.result; 
     }
   }
 
-  selectRightThumbFile(event) {
+  selectRightThumbFile(event) 
+  {
     this.rightThumbFileList = event.target.files;
     this.rightThumbCurrentFile = this.rightThumbFileList.item(0);
     var reader = new FileReader();
     reader.readAsDataURL(this.rightThumbCurrentFile); 
-    reader.onload = (_event) => { 
+    reader.onload = (_event) => 
+    { 
       this.rightThumbURL = reader.result; 
     }
   }
 
-  // processformInput(data) {
-  //   this.formName = data.nameInput;
-  //   this.formAddress = data.addressInput;
-  //   this.formCity = data.cityInput;
-  //   this.formState = data.stateInput;
-  //   this.formZip = data.zipInput;
-  //   this.formPhone = data.phoneInput;
-  //   this.formSsid = data.ssidInput;
-  //   this.formDob = data.dobInput;
-  // }
+  shouldBeDisabled()
+  {
+    if (this.leftLittleFileList && this.leftRingFileList && this.leftMiddleFileList && this.leftIndexFileList
+      && this.leftThumbFileList && this.rightLittleFileList && this.rightRingFileList && this.rightMiddleFileList
+      && this.rightIndexFileList && this.rightThumbFileList) 
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
 
-  upload(data) {
+  toggleHelp() 
+  {
+    if (this.needHelp == false) 
+    {
+      this.needHelp = true;
+    }
+    else 
+    {
+      this.needHelp = false;
+    }
+  }
+
+  upload(data) 
+  {
     
-    // this.processformInput(data);
 
     this.uploadService.upload(
       this.leftLittleCurrentFile, 
@@ -232,14 +273,31 @@ export class UploadProfileComponent implements OnInit {
       this.formData.get('ssid').value,
       this.pipe.transform(this.formData.get('dob').value, 'shortDate')
       ).subscribe(
-      event => {
-        if (event.type === HttpEventType.UploadProgress) {
-        } else if (event instanceof HttpResponse) {
+      event => 
+      {
+        if (event instanceof HttpResponse) 
+        {
+          this.jsonResponse = event.body;
+
           this.message = event.body.message;
+          this.succeed = event.body.succeed;
+
+          if (this.succeed) 
+          {
+            this._snackBar.open(event.body.message + " ID assigned: " + event.body.id, "OK", {
+              duration: 10000,
+            });
+          }
+          else 
+          {
+            this._snackBar.open(event.body.message, "OK", {
+              duration: 10000,
+            });
+          }
+
           this.fileInfos = this.uploadService.getFiles();
 
           this.responseJSONObj = <result>event.body;
-          this.thing = getBoolean(this.responseJSONObj.ident);
           this.response = true;
         }
       },
