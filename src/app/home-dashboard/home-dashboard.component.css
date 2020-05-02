@@ -1,9 +1,27 @@
 mat-card 
 {
-    margin: 5px;
+  margin: 5px;
 }
 
 mat-form-field 
 {
   margin: 5px;
+}
+
+mat-accordion
+{
+  width: 100%;
+}
+
+.mat-expansion-panel-header-description 
+{
+  display: flex;
+  justify-content: flex-end;
+}
+
+img 
+{
+  align-self: center;
+  max-width: 50%;
+  max-height: 50%;
 }

@@ -1,53 +1,217 @@
 <div class="app-content">
 
-    <mat-card>
-      <mat-card-title>Dashboard</mat-card-title>
-      <mat-card-content>
+  <mat-card>
+    <mat-card-title>Seton Hill University Automated Fingerprint Identification System</mat-card-title>
+    <mat-card-content>
+
+      <div class="flex-container" style="margin-top: 30px;" fxLayout="row" fxLayoutAlign="left" fxLayoutAlign.xs="space-evenly center" fxLayoutAlign.s="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+        <img style="margin: 10px;" src="../../assets/crest.png">
         
-        <div>
-          <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+        <div class="flex-container" fxLayoutAlign="center" fxLayout="column" style="width: 100%;">
           
-            <mat-card class="child-1" style="padding-bottom: 30px; text-align: center;">
-              <h4>Total Indexed Profiles:</h4>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Getting Started
+                </mat-panel-title>
+                <mat-panel-description>
+                  Where to start.
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              
+              <h2>Welcome to SHUAFIS</h2>
+              <p>The SHUAFIS client interface is controlled through the <b>Control Panel</b>. 
+                Simply click on the <mat-icon>menu</mat-icon> icon in the top left corner, and it will slide onto the interface.
+                You can immediately begin generating <b>queries</b> by clicking on the appropriate tab in the <b>Control Panel</b>.
+              </p>
+
               <br>
-              <p style="font-size: 48pt;">{{statisticsData?.indexedprofiles}}</p>
-            </mat-card>
-  
-            <mat-card class="child-2" style="padding-bottom: 30px; text-align: center;">
-              <h4>Total Queries:</h4>
+
+              <h2>Queries And You</h2>
+              <p>Interaction with the underlying SHUAFIS software is achieved through <b>queries</b>. You could think of a <b>query</b> as asking SHUAFIS
+                about the identity of a print sample. There are two types of <b>query</b> that can be performed:</p>
+              <ol>
+                <li><b>Comparison (1:1) Query</b>
+                  <p>A <b>comparison query</b> is used to analyze two provided prints for similarity.</p>
+                </li>
+                <li><b>Unknown (1:N) Query</b>
+                  <p>An <b>unknown query</b> is used to to individualize an unknown print by searching the SHUAFIS database for similar <b>profiles</b>.</p>
+                </li>
+              </ol>
+              <p>Similarity is scored using a 40-threshold system, wherein a score of 40 represents a 0.01% chance of the provided prints not being a match.
+                Regardless of the query type, when a print is within the similarity threshold to another, it is said to be "<b>ident</b>". 
+                A score above 40 can be considered <b>ident</b>, statistically speaking.
+              </p>
+              
               <br>
-              <p style="font-size: 48pt;">{{statisticsData?.totalqueries}}</p>
-            </mat-card>
-  
-            <mat-card class="child-3" style="padding-bottom: 30px; text-align: center;">
-              <h4>Total Ident Queries:</h4>
+
+              <h2>Profiles</h2>
+              <p>Persons indexed by SHUAFIS are stored as <b>profiles</b>. <b>Profiles</b> can be added to the SHUAFIS system by using
+              the <b>Upload Profile</b> interface found in the <b>Control Panel</b>.</p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Seton Hill Police
+                </mat-panel-title>
+                <mat-panel-description>
+                  Resources for campus police.
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <h2>This is where resources and links for the Seton Hill Police Department would go.</h2>
+              <p>As this is a fictional proof-of-concept that has no official affiliation with SHUPD, 
+                this section will be filled with placeholder content.</p>
               <br>
-              <p style="font-size: 48pt;">{{statisticsData?.totalidentqueries}}</p>
-            </mat-card>
-  
-          </div>
-  
+              <h2>Lorem Ipsum</h2>
+              <ul>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+              </ul>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Law Enforcement Interaction Portal
+                </mat-panel-title>
+                <mat-panel-description>
+                  Resources for external agencies.
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div class="flex-container" fxLayoutAlign="center" fxLayout="column">
+                <img src="../../assets/underConstruction.jpg">
+                <h2>Unfortunately, SHUAFIS integration with the external Law Enforcement Interaction Portal is under development.</h2>
+                <p>The portal will allow external law enforcement agencies to interact with SHUAFIS.</p>
+              </div>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  SHUIBCS
+                </mat-panel-title>
+                <mat-panel-description>
+                  Instant background check system integration.
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div class="flex-container" fxLayoutAlign="center" fxLayout="column">
+                <img src="../../assets/underConstruction.jpg">
+                <h2>Unfortunately, SHUAFIS integration with the Seton Hill University Instant Background Check System is currently under development.</h2>
+                <p>SHUIBCS will be able to query SHUAFIS for queries and query results.</p>
+              </div>
+
+            </mat-expansion-panel>
+          </mat-accordion>
           
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  FAQs
+                </mat-panel-title>
+                <mat-panel-description>
+                  Frequently asked questions.
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <h2>What do I need to access SHUAFIS?</h2>
+              <p>SHUAFIS can be accessed by any device running a HTML5 compatable web browser. A virtual network tunnel will also need to be installed to facilitate
+                secure access.
+              </p>
+
+              <br>
+
+              <h2>Can I access SHUAFIS using my phone/tablet?</h2>
+              <p>Yes. The SHUAFIS interface has been optimized for seamless mobile use.</p>
+
+              <br>
+
+              <h2>What format should print images be in?</h2>
+              <p>Supplied files <b>must</b> be in .PNG, .JPEG, .BMP, .TIFF, or .WSQ format.</p>
+
+              <br>
+
+              <h2>Are there guidelines for print files?</h2>
+              <p>Supplied files should be monocrome. To ensure accuracy, supplied files should be as clear as possible, 
+                and if need be, digitally enhanced for clarity.</p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Help
+                </mat-panel-title>
+                <mat-panel-description>
+                  Having trouble using SHUAFIS?
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <h2>The Help Button</h2>
+              <p>The SHUAFIS has help documentation built directly into the interface. 
+                Clicking a  <button type="button" mat-raised-button>Help</button>  button will reveal information pertaining to your topic.</p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+        </div>
+        
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>At A Glance</mat-card-title>
+    <mat-card-content>
+      
+      <div>
+        <div class="flex-container" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayout.s="column">
+        
+          <mat-card class="child-1" style="padding-bottom: 30px; text-align: center;">
+            <h4>Total Indexed Profiles:</h4>
+            <br>
+            <p style="font-size: 48pt;">{{statisticsData?.indexedprofiles}}</p>
+          </mat-card>
+
+          <mat-card class="child-2" style="padding-bottom: 30px; text-align: center;">
+            <h4>Total Queries:</h4>
+            <br>
+            <p style="font-size: 48pt;">{{statisticsData?.totalqueries}}</p>
+          </mat-card>
+
+          <mat-card class="child-3" style="padding-bottom: 30px; text-align: center;">
+            <h4>Total Ident Queries:</h4>
+            <br>
+            <p style="font-size: 48pt;">{{statisticsData?.totalidentqueries}}</p>
+          </mat-card>
+
         </div>
 
-      </mat-card-content>
+        
+      </div>
 
-    </mat-card>
+    </mat-card-content>
 
-    <mat-card>
-      <mat-card-title>Welcome</mat-card-title>
-      <mat-card-content>
+  </mat-card>
 
-        <div class="flex-container" fxLayout="row" fxLayoutAlign="left">
-          <img width="300px" height="300px" src="https://www.setonhill.edu/favicon/apple-touch-icon-180x180.png">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum modi quos maiores fuga autem ut, quam accusamus qui necessitatibus aliquid suscipit labore ea rerum animi tempore architecto repudiandae. Esse, sunt?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur culpa maxime pariatur nostrum? Iusto maiores numquam minima aliquid dolorum quibusdam sit nobis ex magni repudiandae, in perspiciatis possimus omnis aut?
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit voluptates cumque, consectetur pariatur nostrum adipisci nesciunt vero, aspernatur quos sit sed nobis. Error earum facere veniam et accusantium eaque praesentium.
-          </p>
-        </div>
-
-      </mat-card-content>
-    </mat-card>
-
-  </div>
+</div>
