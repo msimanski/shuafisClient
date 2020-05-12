@@ -110,4 +110,5 @@ export interface result
   zip: string;
   phone: string;
   ssid: string;
+  dob: string;
 }

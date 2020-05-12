@@ -69,8 +69,9 @@
       <h1 style="color: green;" *ngIf="!thing"> No profile found within ident threshold.</h1>
       <br>
       <div *ngIf="thing">
-          <p>PID: {{responseJSONObj.id}}</p>
+          <p>ID: {{responseJSONObj.id}}</p>
           <p>Name: {{responseJSONObj.name}}</p>
+          <p>DOB: {{responseJSONObj.dob}}</p>
           <p>Address: {{responseJSONObj.address}}</p>
           <p>City: {{responseJSONObj.city}}</p>
           <p>State: {{responseJSONObj.state}}</p>
